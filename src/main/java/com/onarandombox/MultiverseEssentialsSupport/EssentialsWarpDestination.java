@@ -8,12 +8,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
 public class EssentialsWarpDestination implements MVDestination {
+    private static boolean CHECK_ESSENTIALS_PERMS;
     private static IWarps WARPS;
 
     private String name;
 
-    public static void setWarps(final IWarps WARPS) {
+    public static void setStatics(final IWarps WARPS, final boolean checkEssentialsPerms) {
         EssentialsWarpDestination.WARPS = WARPS;
+        EssentialsWarpDestination.CHECK_ESSENTIALS_PERMS = checkEssentialsPerms;
     }
 
     @Override
@@ -65,10 +67,7 @@ public class EssentialsWarpDestination implements MVDestination {
 
     @Override
     public String getRequiredPermission() {
-        Location loc = getLocation(null);
-        if (loc == null)
-            return "";
-        else return "multiverse.access." + loc.getWorld().getName();
+        return CHECK_ESSENTIALS_PERMS ? "essentials.warps." + name : "";
     }
 
     @Override
