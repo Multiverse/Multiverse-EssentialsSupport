@@ -1,0 +1,9 @@
+name: Multiverse-EssentialsSupport
+main: com.onarandombox.MultiverseEssentialsSupport.MultiverseEssentialsSupport
+author: main()
+version: maven-version-number
+depend: ['Multiverse-Core', 'Essentials']
+commands:
+  mves:
+    description: Generic Multiverse-EssentialsSupport Command
+    usage: /<command>
