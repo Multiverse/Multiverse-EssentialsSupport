@@ -1,6 +1,6 @@
 package com.onarandombox.MultiverseEssentialsSupport;
 
-import com.earth2me.essentials.api.IEssentials;
+import com.earth2me.essentials.Essentials;
 import com.onarandombox.MultiverseCore.api.MultiversePlugin;
 import com.pneumaticraft.commandhandler.multiverse.CommandHandler;
 
@@ -18,7 +18,7 @@ public class MultiverseEssentialsSupport extends MultiversePlugin {
             this.getConfig().set(PERMCHECK_CONFIG_KEY, false);
             this.saveConfig();
         }
-        IEssentials essentials = (IEssentials) this.getServer().getPluginManager().getPlugin("Essentials");
+        Essentials essentials = (Essentials) this.getServer().getPluginManager().getPlugin("Essentials");
         if (essentials == null) // dafuq are you doing, Bukkit
             throw new IllegalStateException("Bukkit, y u no enforce dependencies??");
 

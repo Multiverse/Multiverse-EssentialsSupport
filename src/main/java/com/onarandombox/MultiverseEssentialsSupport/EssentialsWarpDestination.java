@@ -1,6 +1,6 @@
 package com.onarandombox.MultiverseEssentialsSupport;
 
-import com.earth2me.essentials.api.IWarps;
+import com.earth2me.essentials.Warps;
 import com.onarandombox.MultiverseCore.api.MVDestination;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
@@ -9,11 +9,11 @@ import org.bukkit.util.Vector;
 
 public class EssentialsWarpDestination implements MVDestination {
     private static boolean CHECK_ESSENTIALS_PERMS;
-    private static IWarps WARPS;
+    private static Warps WARPS;
 
     private String name;
 
-    public static void setStatics(final IWarps WARPS, final boolean checkEssentialsPerms) {
+    public static void setStatics(final Warps WARPS, final boolean checkEssentialsPerms) {
         EssentialsWarpDestination.WARPS = WARPS;
         EssentialsWarpDestination.CHECK_ESSENTIALS_PERMS = checkEssentialsPerms;
     }
